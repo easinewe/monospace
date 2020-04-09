@@ -1,0 +1,825 @@
+@charset "UTF-8";
+/* CSS Document */
+
+	body{
+		background-color: black;
+		color: white;
+		font-size: 20px;
+		font-family: 'helvetica', 'arial';
+	}
+	a:link,
+	a:visited{
+		color: white;
+		margin-left: 1rem;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+	
+	
+	/*animation controls*/	
+	
+	#controls{
+		font-size: 15px;
+		position: fixed;
+		bottom: 1rem;
+		right: 1rem;
+	}
+
+	body.horizontals .letter span:nth-child(-n+6){
+		width: 0%;
+	}
+
+	body.verticals .letter span:nth-child(n+7):nth-child(-n+12){
+		height: 0%;
+	}
+
+
+	/*letters*/	
+
+	.letter{
+		width: 3em;
+		height: 4em;
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		margin: 25px;	
+	}
+	.letter span{
+		position: absolute;
+		background-color: white;
+		transition: all 1s linear;
+	}
+	.letter span:nth-child(even){
+		transition: all 1s linear 1s;
+	}
+	
+	/*group: horizontal bars*/
+	
+	.letter span:nth-child(-n+6){
+		width: 50%;
+		height: 0.2em;
+	}
+	
+	/*group: vertical bars*/
+	
+	.letter span:nth-child(n+7):nth-child(-n+12){
+		width: 0.2em;
+		height: 50%;
+	}
+	
+	/*group: diagonal bars*/
+	
+	.letter span:nth-child(n+13):nth-child(-n+16){
+		width: 100%;
+		height: 0.2em;
+		top: 50%;
+		left: 50%;
+		transform-origin: center left;
+	}
+	
+	/*group: truncated vertical bars*/
+	.colon.letter span:nth-child(9),
+	.colon.letter span:nth-child(12),
+	.question.letter span:nth-child(11),
+	.question.letter span:nth-child(11),
+	.exclamation.letter span:nth-child(11),
+	.comma.letter span:nth-child(10),
+	.quote.letter span:nth-child(8),
+	.quote.letter span:nth-child(9),
+	.single_quote.letter span:nth-child(8){
+		height: 25%;
+	}
+
+	/*group: truncated horizontal bars*/
+	.period.letter span:nth-child(5){
+		width: 25%;
+	}
+
+	/*group: truncated horizontal bars*/
+	.at.letter span:nth-child(11){
+		width: 0.2em;
+		height: 25%;
+		bottom: 25%;
+	}
+
+	/* single bars */
+
+	.letter span:nth-child(1){
+		top: 0px;
+		left: 0px;
+	}
+	.letter span:nth-child(2){
+		top: 0px;
+		right: 0px;
+	}
+	.letter span:nth-child(3){
+		top: 50%;
+		left: 0px;
+	}
+	.letter span:nth-child(4){
+		top: 50%;
+		right: 0px;
+	}
+	.letter span:nth-child(5){
+		bottom: 0px;
+		left: 0px;
+	}
+	.letter span:nth-child(6){
+		bottom: 0px;
+		right: 0px;
+	}
+	.letter span:nth-child(7){
+		top: 0px;
+		left: 0px;
+	}
+	.letter span:nth-child(8){
+		top: 0px;
+		left: 50%;
+	}
+	.letter span:nth-child(9){
+		top: 0px;
+		right: 0px;
+	}
+	.letter span:nth-child(10){
+		bottom: 0px;
+		left: 0px;
+	}
+	.letter span:nth-child(11){
+		bottom: 0px;
+		left: 50%;
+	}
+	.letter span:nth-child(12){
+		bottom: 0px;
+		right: 0px;
+	}
+	.letter span:nth-child(8),
+	.letter span:nth-child(11){
+		transform: translateX(-0.1em);
+	}
+	
+
+	.letter span:nth-child(13){
+		transform: rotate(-124deg) translate(-0.1em);
+	}
+	.letter span:nth-child(14){
+		transform: rotate(56deg) translate(-0.1em);
+	}
+	.letter span:nth-child(15){
+		transform: rotate(-56deg) translate(-0.1em);
+	}
+	.letter span:nth-child(16){
+		transform: rotate(-236deg) translate(-0.1em);
+	}
+
+	/*letters*/
+	
+	.h.letter span:nth-child(1),
+	.j.letter span:nth-child(1),
+	.k.letter span:nth-child(1),
+	.l.letter span:nth-child(1),
+	.m.letter span:nth-child(1),
+	.n.letter span:nth-child(1),
+	.u.letter span:nth-child(1),
+	.v.letter span:nth-child(1),
+	.w.letter span:nth-child(1),
+	.x.letter span:nth-child(1),
+	.y.letter span:nth-child(1),
+	.forward.letter span:nth-child(1),
+	.four.letter span:nth-child(1),
+	.star.letter span:nth-child(1),
+	.space.letter span:nth-child(1),
+	.slash.letter span:nth-child(1),
+	.colon.letter span:nth-child(1),
+	.question.letter span:nth-child(1),
+	.exclamation.letter span:nth-child(1),
+	.quote.letter span:nth-child(1),
+	.single_quote.letter span:nth-child(1),
+	.hyphen.letter span:nth-child(1),
+	.period.letter span:nth-child(1),
+	.comma.letter span:nth-child(1),
+	.dash.letter span:nth-child(1),
+	.percent.letter span:nth-child(1),
+	.plus.letter span:nth-child(1),
+	.minus.letter span:nth-child(1),
+	.open.letter span:nth-child(1),
+	.underscore.letter span:nth-child(1){
+		width: 0px;
+	}
+	.h.letter span:nth-child(2),
+	.j.letter span:nth-child(2),
+	.k.letter span:nth-child(2),
+	.l.letter span:nth-child(2),
+	.m.letter span:nth-child(2),
+	.n.letter span:nth-child(2),
+	.u.letter span:nth-child(2),
+	.v.letter span:nth-child(2),
+	.w.letter span:nth-child(2),
+	.x.letter span:nth-child(2),
+	.y.letter span:nth-child(2),
+	.forward.letter span:nth-child(2),
+	.one.letter span:nth-child(2),
+	.four.letter span:nth-child(2),
+	.star.letter span:nth-child(2),
+	.space.letter span:nth-child(2),
+	.slash.letter span:nth-child(2),
+	.colon.letter span:nth-child(2),
+	.exclamation.letter span:nth-child(2),
+	.quote.letter span:nth-child(2),
+	.single_quote.letter span:nth-child(2),
+	.hyphen.letter span:nth-child(2),
+	.period.letter span:nth-child(2),
+	.comma.letter span:nth-child(2),
+	.dash.letter span:nth-child(2),
+	.percent.letter span:nth-child(2),
+	.plus.letter span:nth-child(2),
+	.minus.letter span:nth-child(2),
+	.close.letter span:nth-child(2),
+	.underscore.letter span:nth-child(2){
+		width: 0px;
+	}
+	.b.letter span:nth-child(3),
+	.c.letter span:nth-child(3),
+	.d.letter span:nth-child(3),
+	.g.letter span:nth-child(3),
+	.i.letter span:nth-child(3),
+	.j.letter span:nth-child(3),
+	.l.letter span:nth-child(3),
+	.m.letter span:nth-child(3),
+	.n.letter span:nth-child(3),
+	.o.letter span:nth-child(3),
+	.q.letter span:nth-child(3),
+	.t.letter span:nth-child(3),
+	.u.letter span:nth-child(3),
+	.v.letter span:nth-child(3),
+	.w.letter span:nth-child(3),
+	.x.letter span:nth-child(3),
+	.z.letter span:nth-child(3),
+	.forward.letter span:nth-child(3),
+	.one.letter span:nth-child(3),
+	.three.letter span:nth-child(3),
+	.seven.letter span:nth-child(3),
+	.zero.letter span:nth-child(3),
+	.space.letter span:nth-child(3),
+	.slash.letter span:nth-child(3),
+	.colon.letter span:nth-child(3),
+	.question.letter span:nth-child(3),
+	.exclamation.letter span:nth-child(3),
+	.quote.letter span:nth-child(3),
+	.single_quote.letter span:nth-child(3),
+	.period.letter span:nth-child(3),
+	.comma.letter span:nth-child(3),
+	.percent.letter span:nth-child(3),
+	.open.letter span:nth-child(3),
+	.close.letter span:nth-child(3),
+	.underscore.letter span:nth-child(3){
+		width: 0px;
+	}
+	.c.letter span:nth-child(4),
+	.d.letter span:nth-child(4),
+	.i.letter span:nth-child(4),
+	.j.letter span:nth-child(4),
+	.k.letter span:nth-child(4),
+	.l.letter span:nth-child(4),
+	.m.letter span:nth-child(4),
+	.n.letter span:nth-child(4),
+	.o.letter span:nth-child(4),
+	.q.letter span:nth-child(4),
+	.t.letter span:nth-child(4),
+	.u.letter span:nth-child(4),
+	.v.letter span:nth-child(4),
+	.w.letter span:nth-child(4),
+	.x.letter span:nth-child(4),
+	.z.letter span:nth-child(4),
+	.forward.letter span:nth-child(4),
+	.one.letter span:nth-child(4),
+	.seven.letter span:nth-child(4),
+	.zero.letter span:nth-child(4),
+	.space.letter span:nth-child(4),
+	.slash.letter span:nth-child(4),
+	.at.letter span:nth-child(4),
+	.colon.letter span:nth-child(4),
+	.exclamation.letter span:nth-child(4),
+	.quote.letter span:nth-child(4),
+	.single_quote.letter span:nth-child(4),
+	.hyphen.letter span:nth-child(4),
+	.period.letter span:nth-child(4),
+	.comma.letter span:nth-child(4),
+	.percent.letter span:nth-child(4),
+	.open.letter span:nth-child(4),
+	.close.letter span:nth-child(4),
+	.underscore.letter span:nth-child(4){
+		width: 0px;
+	}
+	.a.letter span:nth-child(5),
+	.f.letter span:nth-child(5),
+	.h.letter span:nth-child(5),
+	.k.letter span:nth-child(5),
+	.m.letter span:nth-child(5),
+	.n.letter span:nth-child(5),
+	.p.letter span:nth-child(5),
+	.r.letter span:nth-child(5),
+	.t.letter span:nth-child(5),
+	.v.letter span:nth-child(5),
+	.x.letter span:nth-child(5),
+	.forward.letter span:nth-child(5),
+	.four.letter span:nth-child(5),
+	.seven.letter span:nth-child(5),
+	.star.letter span:nth-child(5),
+	.space.letter span:nth-child(5),
+	.slash.letter span:nth-child(5),
+	.colon.letter span:nth-child(5),
+	.question.letter span:nth-child(5),
+	.exclamation.letter span:nth-child(5),
+	.quote.letter span:nth-child(5),
+	.single_quote.letter span:nth-child(5),
+	.hyphen.letter span:nth-child(5),
+	.comma.letter span:nth-child(5),
+	.dash.letter span:nth-child(5),
+	.percent.letter span:nth-child(5),
+	.plus.letter span:nth-child(5),
+	.minus.letter span:nth-child(5),
+	.open.letter span:nth-child(5){
+		width: 0px;
+	}
+	.a.letter span:nth-child(6),
+	.f.letter span:nth-child(6),
+	.h.letter span:nth-child(6),
+	.k.letter span:nth-child(6),
+	.m.letter span:nth-child(6),
+	.n.letter span:nth-child(6),
+	.p.letter span:nth-child(6),
+	.r.letter span:nth-child(6),
+	.t.letter span:nth-child(6),
+	.v.letter span:nth-child(6),
+	.x.letter span:nth-child(6),
+	.four.letter span:nth-child(6),
+	.seven.letter span:nth-child(6),
+	.forward.letter span:nth-child(6),
+	.star.letter span:nth-child(6),
+	.space.letter span:nth-child(6),
+	.slash.letter span:nth-child(6),
+	.colon.letter span:nth-child(6),
+	.question.letter span:nth-child(6),
+	.exclamation.letter span:nth-child(6),
+	.quote.letter span:nth-child(6),
+	.single_quote.letter span:nth-child(6),
+	.period.letter span:nth-child(6),
+	.hyphen.letter span:nth-child(6),
+	.comma.letter span:nth-child(6),
+	.dash.letter span:nth-child(6),
+	.percent.letter span:nth-child(6),
+	.plus.letter span:nth-child(6),
+	.minus.letter span:nth-child(6),
+	.close.letter span:nth-child(6){
+		width: 0px;
+	}
+	.i.letter span:nth-child(7),
+	.j.letter span:nth-child(7),
+	.t.letter span:nth-child(7),
+	.x.letter span:nth-child(7),
+	.z.letter span:nth-child(7),
+	.one.letter span:nth-child(7),
+	.two.letter span:nth-child(7),
+	.three.letter span:nth-child(7),
+	.seven.letter span:nth-child(7),
+	.forward.letter span:nth-child(7),
+	.star.letter span:nth-child(7),
+	.space.letter span:nth-child(7),
+	.slash.letter span:nth-child(7),
+	.at.letter span:nth-child(7),
+	.colon.letter span:nth-child(7),
+	.question.letter span:nth-child(7),
+	.exclamation.letter span:nth-child(7),
+	.quote.letter span:nth-child(7),
+	.single_quote.letter span:nth-child(7),
+	.hyphen.letter span:nth-child(7),
+	.period.letter span:nth-child(7),
+	.comma.letter span:nth-child(7),
+	.dash.letter span:nth-child(7),
+	.plus.letter span:nth-child(7),
+	.minus.letter span:nth-child(7),
+	.open.letter span:nth-child(7),
+	.close.letter span:nth-child(7),
+	.underscore.letter span:nth-child(7){
+		height: 0px;
+	}
+	.a.letter span:nth-child(8),
+	.b.letter span:nth-child(8),
+	.c.letter span:nth-child(8),
+	.d.letter span:nth-child(8),
+	.e.letter span:nth-child(8),
+	.f.letter span:nth-child(8),
+	.g.letter span:nth-child(8),
+	.h.letter span:nth-child(8),
+	.j.letter span:nth-child(8),
+	.k.letter span:nth-child(8),
+	.l.letter span:nth-child(8),
+	.m.letter span:nth-child(8),
+	.n.letter span:nth-child(8),
+	.o.letter span:nth-child(8),
+	.p.letter span:nth-child(8),
+	.q.letter span:nth-child(8),
+	.r.letter span:nth-child(8),
+	.s.letter span:nth-child(8),
+	.u.letter span:nth-child(8),
+	.v.letter span:nth-child(8),
+	.w.letter span:nth-child(8),
+	.x.letter span:nth-child(8),
+	.y.letter span:nth-child(8),
+	.z.letter span:nth-child(8),
+	.two.letter span:nth-child(8),
+	.three.letter span:nth-child(8),
+	.four.letter span:nth-child(8),
+	.five.letter span:nth-child(8),
+	.six.letter span:nth-child(8),
+	.seven.letter span:nth-child(8),
+	.eight.letter span:nth-child(8),
+	.nine.letter span:nth-child(8),
+	.zero.letter span:nth-child(8),
+	.forward.letter span:nth-child(8),
+	.space.letter span:nth-child(8),
+	.slash.letter span:nth-child(8),
+	.at.letter span:nth-child(8),
+	.colon.letter span:nth-child(8),
+	.question.letter span:nth-child(8),
+	.hyphen.letter span:nth-child(8),
+	.period.letter span:nth-child(8),
+	.comma.letter span:nth-child(8),
+	.dash.letter span:nth-child(8),
+	.percent.letter span:nth-child(8),
+	.minus.letter span:nth-child(8),
+	.underscore.letter span:nth-child(8){
+		height: 0px;
+	}
+	.c.letter span:nth-child(9),
+	.e.letter span:nth-child(9),
+	.f.letter span:nth-child(9),
+	.g.letter span:nth-child(9),
+	.i.letter span:nth-child(9),
+	.k.letter span:nth-child(9),
+	.l.letter span:nth-child(9),
+	.s.letter span:nth-child(9),
+	.t.letter span:nth-child(9),
+	.v.letter span:nth-child(9),
+	.x.letter span:nth-child(9),
+	.z.letter span:nth-child(9),
+	.one.letter span:nth-child(9),
+	.five.letter span:nth-child(9),
+	.six.letter span:nth-child(9),
+	.seven.letter span:nth-child(9),
+	.forward.letter span:nth-child(9),
+	.star.letter span:nth-child(9),
+	.space.letter span:nth-child(9),
+	.slash.letter span:nth-child(9),
+	.exclamation.letter span:nth-child(9),
+	.single_quote.letter span:nth-child(9),
+	.hyphen.letter span:nth-child(9),
+	.period.letter span:nth-child(9),
+	.comma.letter span:nth-child(9),
+	.dash.letter span:nth-child(9),
+	.percent.letter span:nth-child(9),
+	.plus.letter span:nth-child(9),
+	.minus.letter span:nth-child(9),
+	.open.letter span:nth-child(9),
+	.close.letter span:nth-child(9),
+	.underscore.letter span:nth-child(9){
+		height: 0px;
+	}
+	.i.letter span:nth-child(10),
+	.j.letter span:nth-child(10),
+	.s.letter span:nth-child(10),
+	.t.letter span:nth-child(10),
+	.x.letter span:nth-child(10),
+	.y.letter span:nth-child(10),
+	.z.letter span:nth-child(10),
+	.one.letter span:nth-child(10),
+	.three.letter span:nth-child(10),
+	.four.letter span:nth-child(10),
+	.five.letter span:nth-child(10),
+	.seven.letter span:nth-child(10),
+	.nine.letter span:nth-child(10),
+	.forward.letter span:nth-child(10),
+	.star.letter span:nth-child(10),
+	.space.letter span:nth-child(10),
+	.slash.letter span:nth-child(10),
+	.colon.letter span:nth-child(10),
+	.question.letter span:nth-child(10),
+	.exclamation.letter span:nth-child(10),
+	.quote.letter span:nth-child(10),
+	.single_quote.letter span:nth-child(10),
+	.hyphen.letter span:nth-child(10),
+	.period.letter span:nth-child(10),
+	.dash.letter span:nth-child(10),
+	.percent.letter span:nth-child(10),
+	.plus.letter span:nth-child(10),
+	.minus.letter span:nth-child(10),
+	.open.letter span:nth-child(10),
+	.close.letter span:nth-child(10),
+	.underscore.letter span:nth-child(10){
+		height: 0px;
+	}
+	.a.letter span:nth-child(11),
+	.b.letter span:nth-child(11),
+	.c.letter span:nth-child(11),
+	.d.letter span:nth-child(11),
+	.e.letter span:nth-child(11),
+	.f.letter span:nth-child(11),
+	.g.letter span:nth-child(11),
+	.h.letter span:nth-child(11),
+	.j.letter span:nth-child(11),
+	.k.letter span:nth-child(11),
+	.l.letter span:nth-child(11),
+	.m.letter span:nth-child(11),
+	.n.letter span:nth-child(11),
+	.o.letter span:nth-child(11),
+	.p.letter span:nth-child(11),
+	.q.letter span:nth-child(11),
+	.r.letter span:nth-child(11),
+	.s.letter span:nth-child(11),
+	.u.letter span:nth-child(11),
+	.v.letter span:nth-child(11),
+	.x.letter span:nth-child(11),
+	.z.letter span:nth-child(11),
+	.two.letter span:nth-child(11),
+	.three.letter span:nth-child(11),
+	.four.letter span:nth-child(11),
+	.five.letter span:nth-child(11),
+	.six.letter span:nth-child(11),
+	.seven.letter span:nth-child(11),
+	.eight.letter span:nth-child(11),
+	.nine.letter span:nth-child(11),
+	.zero.letter span:nth-child(11),
+	.forward.letter span:nth-child(11),
+	.space.letter span:nth-child(11),
+	.slash.letter span:nth-child(11),
+	.colon.letter span:nth-child(11),
+	.quote.letter span:nth-child(11),
+	.single_quote.letter span:nth-child(11),
+	.hyphen.letter span:nth-child(11),
+	.period.letter span:nth-child(11),
+	.comma.letter span:nth-child(11),
+	.dash.letter span:nth-child(11),
+	.percent.letter span:nth-child(11),
+	.minus.letter span:nth-child(11),
+	.underscore.letter span:nth-child(11){
+		height: 0px;
+	}
+	.c.letter span:nth-child(12),
+	.e.letter span:nth-child(12),
+	.f.letter span:nth-child(12),
+	.i.letter span:nth-child(12),
+	.k.letter span:nth-child(12),
+	.l.letter span:nth-child(12),
+	.p.letter span:nth-child(12),
+	.r.letter span:nth-child(12),
+	.t.letter span:nth-child(12),
+	.v.letter span:nth-child(12),
+	.x.letter span:nth-child(12),
+	.y.letter span:nth-child(12),
+	.z.letter span:nth-child(12),
+	.one.letter span:nth-child(12),
+	.two.letter span:nth-child(12),
+	.seven.letter span:nth-child(12),
+	.forward.letter span:nth-child(12),
+	.star.letter span:nth-child(12),
+	.space.letter span:nth-child(12),
+	.slash.letter span:nth-child(12),
+	.question.letter span:nth-child(12),
+	.exclamation.letter span:nth-child(12),
+	.quote.letter span:nth-child(12),
+	.single_quote.letter span:nth-child(12),
+	.hyphen.letter span:nth-child(12),
+	.period.letter span:nth-child(12),
+	.comma.letter span:nth-child(12),
+	.dash.letter span:nth-child(12),
+	.plus.letter span:nth-child(12),
+	.minus.letter span:nth-child(12),
+	.open.letter span:nth-child(12),
+	.close.letter span:nth-child(12),
+	.underscore.letter span:nth-child(12){
+		height: 0px;
+	}
+	.a.letter span:nth-child(13),
+	.b.letter span:nth-child(13),
+	.c.letter span:nth-child(13),
+	.d.letter span:nth-child(13),
+	.e.letter span:nth-child(13),
+	.f.letter span:nth-child(13),
+	.g.letter span:nth-child(13),
+	.h.letter span:nth-child(13),
+	.i.letter span:nth-child(13),
+	.j.letter span:nth-child(13),
+	.k.letter span:nth-child(13),
+	.l.letter span:nth-child(13),
+	.o.letter span:nth-child(13),
+	.p.letter span:nth-child(13),
+	.q.letter span:nth-child(13),
+	.r.letter span:nth-child(13),
+	.s.letter span:nth-child(13),
+	.t.letter span:nth-child(13),
+	.u.letter span:nth-child(13),
+	.v.letter span:nth-child(13),
+	.w.letter span:nth-child(13),
+	.y.letter span:nth-child(13),
+	.z.letter span:nth-child(13),
+	.one.letter span:nth-child(13),
+	.two.letter span:nth-child(13),
+	.three.letter span:nth-child(13),
+	.four.letter span:nth-child(13),
+	.five.letter span:nth-child(13),
+	.six.letter span:nth-child(13),
+	.seven.letter span:nth-child(13),
+	.eight.letter span:nth-child(13),
+	.nine.letter span:nth-child(13),
+	.space.letter span:nth-child(13),
+	.slash.letter span:nth-child(13),
+	.at.letter span:nth-child(13),
+	.colon.letter span:nth-child(13),
+	.question.letter span:nth-child(13),
+	.exclamation.letter span:nth-child(13),
+	.quote.letter span:nth-child(13),
+	.single_quote.letter span:nth-child(13),
+	.hyphen.letter span:nth-child(13),
+	.period.letter span:nth-child(13),
+	.comma.letter span:nth-child(13),
+	.dash.letter span:nth-child(13),
+	.percent.letter span:nth-child(13),
+	.plus.letter span:nth-child(13),
+	.minus.letter span:nth-child(13),
+	.open.letter span:nth-child(13),
+	.close.letter span:nth-child(13),
+	.underscore.letter span:nth-child(13){
+		width: 0px;
+	}
+	.a.letter span:nth-child(14),
+	.b.letter span:nth-child(14),
+	.c.letter span:nth-child(14),
+	.d.letter span:nth-child(14),
+	.e.letter span:nth-child(14),
+	.f.letter span:nth-child(14),
+	.g.letter span:nth-child(14),
+	.h.letter span:nth-child(14),
+	.i.letter span:nth-child(14),
+	.j.letter span:nth-child(14),
+	.l.letter span:nth-child(14),
+	.m.letter span:nth-child(14),
+	.o.letter span:nth-child(14),
+	.p.letter span:nth-child(14),
+	.s.letter span:nth-child(14),
+	.t.letter span:nth-child(14),
+	.u.letter span:nth-child(14),
+	.v.letter span:nth-child(14),
+	.w.letter span:nth-child(14),
+	.y.letter span:nth-child(14),
+	.z.letter span:nth-child(14),
+	.one.letter span:nth-child(14),
+	.two.letter span:nth-child(14),
+	.three.letter span:nth-child(14),
+	.four.letter span:nth-child(14),
+	.five.letter span:nth-child(14),
+	.six.letter span:nth-child(14),
+	.seven.letter span:nth-child(14),
+	.eight.letter span:nth-child(14),
+	.nine.letter span:nth-child(14),
+	.forward.letter span:nth-child(14),
+	.space.letter span:nth-child(14),
+	.slash.letter span:nth-child(14),
+	.at.letter span:nth-child(14),
+	.colon.letter span:nth-child(14),
+	.question.letter span:nth-child(14),
+	.exclamation.letter span:nth-child(14),
+	.quote.letter span:nth-child(14),
+	.single_quote.letter span:nth-child(14),
+	.hyphen.letter span:nth-child(14),
+	.period.letter span:nth-child(14),
+	.comma.letter span:nth-child(14),
+	.dash.letter span:nth-child(14),
+	.percent.letter span:nth-child(14),
+	.plus.letter span:nth-child(14),
+	.minus.letter span:nth-child(14),
+	.open.letter span:nth-child(14),
+	.close.letter span:nth-child(14),
+	.underscore.letter span:nth-child(14){
+		width: 0px;
+	}
+	.a.letter span:nth-child(15),
+	.b.letter span:nth-child(15),
+	.c.letter span:nth-child(15),
+	.d.letter span:nth-child(15),
+	.e.letter span:nth-child(15),
+	.f.letter span:nth-child(15),
+	.g.letter span:nth-child(15),
+	.h.letter span:nth-child(15),
+	.i.letter span:nth-child(15),
+	.j.letter span:nth-child(15),
+	.l.letter span:nth-child(15),
+	.n.letter span:nth-child(15),
+	.p.letter span:nth-child(15),
+	.q.letter span:nth-child(15),
+	.r.letter span:nth-child(15),
+	.s.letter span:nth-child(15),
+	.t.letter span:nth-child(15),
+	.u.letter span:nth-child(15),
+	.w.letter span:nth-child(15),
+	.y.letter span:nth-child(15),
+	.one.letter span:nth-child(15),
+	.two.letter span:nth-child(15),
+	.three.letter span:nth-child(15),
+	.four.letter span:nth-child(15),
+	.five.letter span:nth-child(15),
+	.six.letter span:nth-child(15),
+	.eight.letter span:nth-child(15),
+	.nine.letter span:nth-child(15),
+	.zero.letter span:nth-child(15),
+	.forward.letter span:nth-child(15),
+	.space.letter span:nth-child(15),
+	.at.letter span:nth-child(15),
+	.colon.letter span:nth-child(15),
+	.question.letter span:nth-child(15),
+	.exclamation.letter span:nth-child(15),
+	.quote.letter span:nth-child(15),
+	.single_quote.letter span:nth-child(15),
+	.hyphen.letter span:nth-child(15),
+	.period.letter span:nth-child(15),
+	.comma.letter span:nth-child(15),
+	.dash.letter span:nth-child(15),
+	.plus.letter span:nth-child(15),
+	.minus.letter span:nth-child(15),
+	.open.letter span:nth-child(15),
+	.close.letter span:nth-child(15),
+	.underscore.letter span:nth-child(15){
+		width: 0px;
+	}
+	.a.letter span:nth-child(16),
+	.b.letter span:nth-child(16),
+	.c.letter span:nth-child(16),
+	.d.letter span:nth-child(16),
+	.e.letter span:nth-child(16),
+	.f.letter span:nth-child(16),
+	.g.letter span:nth-child(16),
+	.h.letter span:nth-child(16),
+	.i.letter span:nth-child(16),
+	.j.letter span:nth-child(16),
+	.k.letter span:nth-child(16),
+	.l.letter span:nth-child(16),
+	.m.letter span:nth-child(16),
+	.n.letter span:nth-child(16),
+	.p.letter span:nth-child(16),
+	.q.letter span:nth-child(16),
+	.r.letter span:nth-child(16),
+	.s.letter span:nth-child(16),
+	.t.letter span:nth-child(16),
+	.u.letter span:nth-child(16),
+	.w.letter span:nth-child(16),
+	.y.letter span:nth-child(16),
+	.one.letter span:nth-child(16),
+	.two.letter span:nth-child(16),
+	.three.letter span:nth-child(16),
+	.four.letter span:nth-child(16),
+	.five.letter span:nth-child(16),
+	.six.letter span:nth-child(16),
+	.eight.letter span:nth-child(16),
+	.nine.letter span:nth-child(16),
+	.zero.letter span:nth-child(16),
+	.space.letter span:nth-child(16),
+	.at.letter span:nth-child(16),
+	.colon.letter span:nth-child(16),
+	.question.letter span:nth-child(16),
+	.exclamation.letter span:nth-child(16),
+	.quote.letter span:nth-child(16),
+	.single_quote.letter span:nth-child(16),
+	.hyphen.letter span:nth-child(16),
+	.period.letter span:nth-child(16),
+	.comma.letter span:nth-child(16),
+	.dash.letter span:nth-child(16),
+	.plus.letter span:nth-child(16),
+	.minus.letter span:nth-child(16),
+	.open.letter span:nth-child(16),
+	.close.letter span:nth-child(16),
+	.underscore.letter span:nth-child(16){
+		width: 0px;
+	}
+
+	.clock.letter span:nth-child(n+13):nth-child(-n+16),
+	.clock.letter span:nth-child(11),
+	.clock.letter span:nth-child(4){
+		width: 0px;
+	}
+	.clock.letter span:nth-child(3){
+		 -webkit-animation: tick 60s linear infinite;
+		transform-origin: center right;
+	}
+	.clock.letter span:nth-child(8){
+		width: 0.3em; 
+		-webkit-animation: tick 3600s linear infinite;
+		transform-origin: center left;
+	}
+	@-webkit-keyframes tick
+	{
+		0%   {transform: rotate(0deg);}
+		100% {transform: rotate(360deg);}
+	}
+
+	

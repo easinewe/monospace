@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#grid{
+	padding: 0vw 5vw;
+}
+
+#submit_grid{
+	padding: calc(5vw + 1em);
+}
+#grid_text{
+	width: 50vw;
+}
+#tweet_list{
+	display: none;
+}
+.tweet_grid{
+	font-size: 12px;
+	padding-top: 5vw !important;
+}
+.tweet_grid .letter span:nth-child(-n+6),
+.tweet_grid .letter span:nth-child(n+13):nth-child(-n+16){
+		height: 0.3em;
+}
+.tweet_grid .letter span:nth-child(n+7):nth-child(-n+12){
+		width: 0.3em;
+}
+
