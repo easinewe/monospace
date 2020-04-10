@@ -28,7 +28,6 @@ function showTweet(){
 		new_class = new_class.toLowerCase();  //change to lowercase
 		
 		gl.className = new_class + ' letter';
-		
 	});
 	
 	//console.log(tweet);
@@ -155,13 +154,25 @@ function buildGrid(){
 	grid.innerHTML = grid_items;
 }
 
+//change the root font-size
+function changeRoot(){
+	var w = window.innerWidth,
+		fs = w/240;
+
+	document.body.style.fontSize = fs+'px';
+	console.log('changeRoot');
+}
 
 /* FIRE */
-
 buildGrid();
 showTweet();
+changeRoot();
+
 
 //cycle randomly through tweets
 window.setInterval(function(){
   showTweet();
 }, (refresh_rate*1000) );
+
+//adjust font size
+window.addEventListener("resize", changeRoot);

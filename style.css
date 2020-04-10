@@ -4,13 +4,15 @@
 	body{
 		background-color: black;
 		color: white;
-		font-size: 20px;
+		font-size: 10px;
+		margin: 0px;
+		padding: 0px;
 		font-family: 'helvetica', 'arial';
 	}
 	a:link,
 	a:visited{
 		color: white;
-		margin-left: 1rem;
+		margin-left: 1em;
 		text-decoration: none;
 	}
 	a:hover{
@@ -23,8 +25,8 @@
 	#controls{
 		font-size: 15px;
 		position: fixed;
-		bottom: 1rem;
-		right: 1rem;
+		bottom: 1em;
+		right: 1em;
 	}
 
 	body.horizontals .letter span:nth-child(-n+6){
@@ -44,7 +46,7 @@
 		position: relative;
 		display: inline-block;
 		overflow: hidden;
-		margin: 25px;	
+		margin: 2.5em;
 	}
 	.letter span{
 		position: absolute;
@@ -812,7 +814,7 @@
 		transform-origin: center right;
 	}
 	.clock.letter span:nth-child(8){
-		width: 0.3em; 
+		width: 0.3em;
 		-webkit-animation: tick 3600s linear infinite;
 		transform-origin: center left;
 	}

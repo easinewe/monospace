@@ -46,7 +46,6 @@ function buildGrid(){
 	console.log(grid);
 }
 
-
 //on page load build grid
 buildGrid();
 
