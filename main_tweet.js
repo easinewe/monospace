@@ -5,7 +5,7 @@
 var grid = document.getElementById('grid'),
 	tweets = document.querySelectorAll('#tweet_list li.morphing'),
 	twitter_character_limit = 280,
-	refresh_rate = 10; //in seconds
+	refresh_rate = 8; //in seconds
 
 
 /* FUNCTIONS */
@@ -141,13 +141,25 @@ function translateCharacters(character){
 	return character;
 }
 
-
 //build grid of stars
 function buildGrid(){
+
+	var window_x 		= window.innerWidth,
+		window_y 		= window.innerHeight,
+		font_size 		= parseFloat(getComputedStyle(document.body).fontSize),
+		grid_padding_x  = (window_x * 0.1),
+		grid_padding_y  = (window_y * 0.1),
+		letters_x 		= (window_x - grid_padding_x) / (font_size * 8), //font_size * (width + margin)
+		letters_y 		= (window_y - grid_padding_y) / (font_size * 9), //font_size * (height + margin)
+		total_letters 	= Math.floor(letters_x) * Math.floor(letters_y);
+
+		console.log(letters_y);
+
+
 	var i=0,
 		grid_items = '';
 	
-	while(i < twitter_character_limit){
+	while(i < total_letters){
 		grid_items += '<div class="star letter"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>';	
 		i++;
 	}
@@ -157,16 +169,17 @@ function buildGrid(){
 //change the root font-size
 function changeRoot(){
 	var w = window.innerWidth,
-		fs = w/240;
+		ratio = (w < 900)?180:240,
+		fs = w/ratio;
 
 	document.body.style.fontSize = fs+'px';
 	console.log('changeRoot');
 }
 
 /* FIRE */
+changeRoot();
 buildGrid();
 showTweet();
-changeRoot();
 
 
 //cycle randomly through tweets
