@@ -169,7 +169,7 @@ function buildGrid(){
 //change the root font-size
 function changeRoot(){
 	var w = window.innerWidth,
-		ratio = (w < 900)?180:240,
+		ratio = (w < 900)?120:240,
 		fs = w/ratio;
 
 	document.body.style.fontSize = fs+'px';
